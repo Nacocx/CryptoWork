@@ -32,6 +32,7 @@ def test_des(test_keys=test_keys, test_messages=test_messages):
 
             print("----" * 10)
 if __name__ == "__main__":
+    
     if len(sys.argv) > 1:
         test_des(test_keys=[sys.argv[1].encode('utf-8')], test_messages=sys.argv[2:])   
     else:
