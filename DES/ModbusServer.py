@@ -1,7 +1,7 @@
 from pymodbus.server.sync import StartTcpServer
 from pymodbus.datastore import ModbusSequentialDataBlock, ModbusSlaveContext, ModbusServerContext
 from DES.DES import DES
-import outputColor as oc
+import DES.outputColor as oc
 
 def registers_to_str(regs):
     b = bytearray()

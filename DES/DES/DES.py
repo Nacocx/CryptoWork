@@ -1,5 +1,5 @@
 # 导入矩阵和常量
-from DES_Matrixes import *
+from .DES_Matrixes import *
 
 class DES:
     # ---------------- 核心常量与置换表 ----------------

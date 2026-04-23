@@ -1,6 +1,6 @@
 from pymodbus.client.sync import ModbusTcpClient
 from DES.DES import DES
-import outputColor as oc
+import DES.outputColor as oc
 
 def str_to_registers(s: str):
     b = s.encode('utf-8')
