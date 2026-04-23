@@ -20,7 +20,7 @@
 - DES/：DES 算法实现与相关矩阵
 	- app.py：DES 单独测试入口
 	- DES.py：DES 核心实现
-	- DES_Matrixs.py：初始置换、S 盒等矩阵
+	- DES_Matrixes.py：初始置换、S 盒等矩阵
 
 ## 环境要求
 
