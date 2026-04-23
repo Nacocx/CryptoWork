@@ -1,4 +1,8 @@
-from DES_Matrixs import *
+# 导入矩阵和常量
+try:
+    from .DES_Matrixs import *
+except ImportError:
+    from DES_Matrixs import *
 
 class DES:
     # ---------------- 核心常量与置换表 ----------------
