@@ -1,4 +1,4 @@
-# XdCrypto
+# DES
 
 一个基于 Python 的 DES 加密与 Modbus TCP 联动演示项目。
 
