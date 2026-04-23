@@ -1,6 +1,8 @@
 # 导入矩阵和常量
-from .DES_Matrixes import *
-
+try:
+    from .DES_Matrixes import *
+except ImportError:
+    from DES_Matrixes import *
 class DES:
     # ---------------- 核心常量与置换表 ----------------
     IP=IP
