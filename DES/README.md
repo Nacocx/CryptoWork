@@ -15,7 +15,7 @@
 ## 目录结构
 
 - ModbusServer.py：Modbus TCP 服务器，接收寄存器写入并解密显示明文
-- ModbusCilent.py：Modbus TCP 客户端，负责加密后写入服务器
+- ModbusClient.py：Modbus TCP 客户端，负责加密后写入服务器
 - outputColor.py：终端彩色输出工具
 - DES/：DES 算法实现与相关矩阵
 	- app.py：DES 单独测试入口
@@ -55,7 +55,7 @@ python ModbusServer.py
 在另一个终端运行：
 
 ```bash
-python ModbusCilent.py
+python ModbusClient.py
 ```
 
 客户端默认会：
