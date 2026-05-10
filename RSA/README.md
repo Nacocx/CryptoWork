@@ -1,55 +1,81 @@
-实现了简单的`RSA`加密算法，并且编写`rsa_test`脚本进行验证
+# 简单 RSA 加密算法实现与验证
 
-`RSA`步骤
+实现了一个简单的 `RSA` 加密算法，并编写 `rsa_test` 脚本进行验证。
 
-1. 获得大素数p q
-2. 计算模数n和欧拉函数ϕ(n)
-   1. ϕ(n)=ϕ(p * q) = ϕ(p) * ϕ(q)
-   2. p q 是素数 => ϕ(n)=(p−1)(q−1)
-3. 选择公钥指数e，要满足 1 < e < ϕ(n)，并且gcd(e,ϕ(n))=1，常用65537
-4. 计算私钥指数d，要满足 d⋅e≡1(modϕ(n))，使用扩展欧几里得算法
-5. 加密解密
-   1. 加密 $c = m^e \mod n$
-   2. 解密 $m = c^d \mod n$
-6. 加密解密原理：
-   
-我们要证明：
+## RSA 步骤
 
-$
-(m^e)^d \equiv m \pmod n
-$
+1. **获得大素数** `p` 和 `q`
+2. **计算模数** `n` 和欧拉函数 `ϕ(n)`
 
-也就是
+   * $$
+     \phi(n) = \phi(p \cdot q) = \phi(p) \cdot \phi(q)
+     $$
+   * 由于 `p` 和 `q` 是素数：
+     $$
+     \phi(n) = (p-1)(q-1)
+     $$
+3. **选择公钥指数** `e`
 
-$
-m^{ed} \mod n
-$
+   * 要满足 
+     $$
+     1 < e < \phi(n) \quad \text{且} \quad \gcd(e, \phi(n)) = 1
+     $$
+   * 常用值：`65537`
+1. **计算私钥指数** `d`
 
-由于 $(d \cdot e \equiv 1 \mod \phi(n))$，可以写作：
+   * 要满足：
+     $$
+     d \cdot e \equiv 1 \mod \phi(n)
+     $$
+   * 使用 **扩展欧几里得算法** 求解
+2. **加密与解密**
 
-$
-ed = k \cdot \phi(n) + 1 \quad \text{(k 为某个整数)}
-$
+   * 加密：
+     $$
+     c = m^e \mod n
+     $$
+   * 解密：
+     $$
+     m = c^d \mod n
+     $$
+3. **加密解密原理**
 
+   我们要证明：
+   $$
+   (m^e)^d \equiv m \mod n
+   $$
+   即
+   $$
+   m^{ed} \mod n
+   $$
 
-$
-m^{ed} = m^{k \phi(n) + 1} = m^{k \phi(n)} \cdot m
-$
+   由于
+   $$
+   d \cdot e \equiv 1 \mod \phi(n)
+   $$
+   可以写作：
+   $$
+   ed = k \cdot \phi(n) + 1 \quad \text{(k 为某个整数)}
+   $$
 
-由欧拉定理：
+   因此：
+   $$
+   m^{ed} = m^{k \phi(n) + 1} = m^{k \phi(n)} \cdot m
+   $$
 
-> 如果 $ \gcd(m, n) = 1 $，则
-> $
-> m^{\phi(n)} \equiv 1 \pmod n
-> $
+   根据 **欧拉定理**：
 
-所以：
+   > 如果 $ \gcd(m, n) = 1 $，则
+   > $$
+   > m^{\phi(n)} \equiv 1 \mod n
+   > $$
 
-$
-m^{k \phi(n)} \equiv 1^k \equiv 1 \pmod n
-$
+   所以：
+   $$
+   m^{k \phi(n)} \equiv 1^k \equiv 1 \mod n
+   $$
 
-
-$
-m^{ed} \equiv 1 \cdot m \equiv m \pmod n
-$
+   最终：
+   $$
+   m^{ed} \equiv 1 \cdot m \equiv m \mod n
+   $$
