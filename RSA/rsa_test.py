@@ -1,5 +1,5 @@
 import time
-from rsa_block import *  # 假设你把之前的 RSA 代码保存为 rsa_block.py
+from rsa_block import *
 from outputColor import *
 
 # --------------------
