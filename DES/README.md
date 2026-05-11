@@ -32,7 +32,9 @@
 建议先创建并激活虚拟环境，然后安装依赖：
 
 ```bash
-pip install pymodbus
+python -m venv .venv
+source .venv/bin/activate 
+pip install pymodbus==2.5.3
 ```
 
 如果你的环境中还没有 Python 虚拟环境，也可以直接使用系统 Python，但更推荐使用独立环境。
